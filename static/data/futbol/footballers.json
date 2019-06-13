@@ -1,0 +1,4 @@
+[{"_id":{"$oid":"5a4f97cddbbb7e24bd9a13d5"},"name":"Lionel Messi","uid":1.0,"img":"/static/img/futbol/messi.jpg","description":"Argentine professional footballer","aliases":"Messi, Leo"},
+{"_id":{"$oid":"5a4f97dcdbbb7e24bd9a13d6"},"name":"Arturo Vidal","uid":2.0,"img":"/static/img/futbol/arturo-vidal.jpg","description":"Chilean professional footballer","aliases":"The Warrior"},
+{"_id":{"$oid":"5a4f97e7dbbb7e24bd9a13d7"},"name":"Javier Hernández","uid":3.0,"img":"/static/img/futbol/javier-hernandez.jpg","description":"Mexican professional footballer ","aliases":"Chicharito"},
+{"_id":{"$oid":"5a4f97f0dbbb7e24bd9a13d8"},"name":"Cristiano Ronaldo","uid":4.0,"img":"/static/img/futbol/ronaldo.jpg","description":"Portuguese professional footballer","aliases":"Ronaldo"}]

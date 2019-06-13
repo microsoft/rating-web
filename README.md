@@ -1,3 +1,9 @@
+# rating-web
+
+Container exposes port 8080.
+Required configuration via environment variables:
+
+- API:  `<set to rating-api endpoint>`. This has to be publicly addressable as requests happen via JavaScript over HTTP.
 
 # Contributing
 
