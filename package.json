@@ -4,7 +4,7 @@
   "description": "Rating front-end",
   "author": "Joey Schluchter <jschluchter@gmail.com>",
   "scripts": {
-    "start": "cross-env SITE_CODE='JLA' NODE_ENV='development' webpack-dev-server"
+    "start": "SITE_CODE='JLA' NODE_ENV='development' API='http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io' webpack-dev-server"
   },
   "dependencies": {
     "at-ui": "^1.2.0-beta",

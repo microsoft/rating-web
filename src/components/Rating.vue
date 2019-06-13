@@ -50,13 +50,13 @@ export default {
     }
   },
     created() {
-      axios.get("/api/sites/" + process.env.SITE_CODE)
+      axios.get("http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io/api/sites/" + process.env.SITE_CODE)
         .then(response => {
           var page = response.data.payload.pages.Rating
           document.title = page.title
           this.headerImage = page.headerImage
           this.subtitle = page.subtitle
-          return axios.get("/api/heroes") 
+          return axios.get("http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io/api/heroes") 
         })
         .then(response => {
           this.heroes = response.data.payload
@@ -93,7 +93,7 @@ export default {
           rate.ratings.push({ id: h, rating: Number( refs[h][0].currentValue || 0 ) })
         }   
 
-        axios.post("/api/rate", rate)
+        axios.post("http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io/api/rate", rate)
         .then(response => {
           router.push('leaderboard')
         })

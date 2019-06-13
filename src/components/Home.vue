@@ -44,7 +44,7 @@ export default {
     };
   },
   created() {
-    axios.get("/api/sites/" + process.env.SITE_CODE)
+    axios.get("http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io/api/sites/" + process.env.SITE_CODE)
       .then(response => {
         var page = response.data.payload.pages.Home
         document.title = page.title
