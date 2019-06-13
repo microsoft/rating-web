@@ -4,7 +4,7 @@
   "description": "Rating front-end",
   "author": "Joey Schluchter <jschluchter@gmail.com>",
   "scripts": {
-    "start": "SITE_CODE='JLA' NODE_ENV='development' API='http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io' webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "at-ui": "^1.2.0-beta",
@@ -13,6 +13,7 @@
     "compression-webpack-plugin": "^1.1.3",
     "numeral": "^2.0.6",
     "vue": "^2.3.4",
+    "html-webpack-plugin": "^2.29.0",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0"
   },
