@@ -75,6 +75,12 @@ module.exports = {
       test: /\.js$|\.css$|\.html$|\.png$|\.jpg$|\.ico$/,
       threshold: 10240,
       minRatio: 0.8
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
+      'process.env.SITE_CODE': JSON.stringify(process.env.SITE_CODE),
+      'process.env.API': JSON.stringify(process.env.API)
     })
   ]
 };

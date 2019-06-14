@@ -6,9 +6,7 @@ var STATIC_DIR = path.join(__dirname, "static");
 var PORT = 8080;
 var app = express();
 
-console.log(`ENV KUBE_NODE_NAME: `, process.env.KUBE_NODE_NAME);
-console.log(`ENV KUBE_POD_NAME: `, process.env.KUBE_POD_NAME);
-console.log(`ENV KUBE_POD_IP: `, process.env.KUBE_POD_IP);
+console.log("Make sure the below environment variables are set");
 console.log(`ENV API: `, process.env.API);
 console.log(`ENV SITE_CODE: `, process.env.SITE_CODE);
 
