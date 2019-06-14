@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "postinstall": "npm run build",
-    "start": "NODE_ENV='development' node app.js"
+    "start": "SITE_CODE='fruits' node app.js"
   },
   "dependencies": {
     "at-ui": "^1.2.0-beta",

@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="row at-row">
-      <div class="col-lg-6 leader-card" v-for="(item, index) in heroes">
+      <div class="col-lg-6 leader-card" v-for="(item, index) in items">
         <div class="at-box-row">
           <at-card :bordered="false" v-bind:style="index | formatPlace">
             <h4 slot="title" class="super-name">
@@ -46,21 +46,21 @@ export default {
     return {
       headerImage: "",
       subtitle:"",
-      heroes: [],
+      itemes: [],
       errors: []
     }
   },
     created() {
-      axios.get("http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io/api/sites/" + process.env.SITE_CODE)
+      axios.get(process.env.API + "/api/sites/" + process.env.SITE_CODE)
         .then(response => {
           var page = response.data.payload.pages.Leaderboard
           document.title = page.title
           this.headerImage = page.headerImage
           this.subtitle = page.subtitle
-          return axios.get("http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io/api/heroes/rated") 
+          return axios.get(process.env.API + "/api/items/rated") 
         })
         .then(response => {
-          this.heroes = response.data.payload
+          this.items = response.data.payload
         })
         .catch(e => {
           this.errors.push(e)

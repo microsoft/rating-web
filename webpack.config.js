@@ -63,13 +63,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        API: JSON.stringify(process.env.API),
-        SITE_CODE: JSON.stringify(process.env.SITE_CODE || "JLA"),
-        KUBE_NODE_NAME: JSON.stringify(process.env.KUBE_NODE_NAME || "NODE NAME"),
-        KUBE_POD_NAME: JSON.stringify(process.env.KUBE_POD_NAME || "POD NAME"),
-        KUBE_POD_IP: JSON.stringify(process.env.KUBE_POD_IP || "POD IP"),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
       }
     }),
     new CompressionPlugin({
@@ -79,35 +76,5 @@ module.exports = {
       threshold: 10240,
       minRatio: 0.8
     })
-  ],
-  devServer: {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    host: '0.0.0.0',
-    // public: `heroes.brianredmond.io`,
-    disableHostCheck: true,
-    port: 8080,
-    before(app) {
-      app.use((req, res, next) => {
-        console.log(`ENV KUBE_NODE_NAME: `, process.env.KUBE_NODE_NAME);
-        console.log(`ENV KUBE_POD_NAME: `, process.env.KUBE_POD_NAME);
-        console.log(`ENV KUBE_POD_IP: `, process.env.KUBE_POD_IP);
-        console.log(`ENV API: `, process.env.API);
-        console.log(`Using middleware for ${req.url}`);
-        next();
-      });
-    },
-    noInfo: false,
-    historyApiFallback: {
-      index: '/dist/'
-    },
-    proxy: {
-      '/api': {
-        target: API
-      },
-      onError: onError,
-      logLevel: 'debug'
-    }
-  }
+  ]
 };

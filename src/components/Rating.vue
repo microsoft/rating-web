@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="row at-row">
-      <div class="col-lg-6" v-for="(item) in heroes">
+      <div class="col-lg-6" v-for="(item) in items">
         <div class="at-box-row">
           <at-card :bordered="false">
             <h4 slot="title" class="super-name">
@@ -45,21 +45,21 @@ export default {
       headerImage: "",
       subtitle: "",
       userIp: "",
-      heroes: [],
+      items: [],
       errors: []
     }
   },
     created() {
-      axios.get("http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io/api/sites/" + process.env.SITE_CODE)
+      axios.get(process.env.API + "/api/sites/" + process.env.SITE_CODE)
         .then(response => {
           var page = response.data.payload.pages.Rating
           document.title = page.title
           this.headerImage = page.headerImage
           this.subtitle = page.subtitle
-          return axios.get("http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io/api/heroes") 
+          return axios.get(process.env.API + "/api/items") 
         })
         .then(response => {
-          this.heroes = response.data.payload
+          this.items = response.data.payload
           this.$Notify({ title: 'Ready to Rate', message: 'Data Retrieved', type:'success' })
           // hardcoding this for now
           this.userIp = '127.0.0.1'
@@ -93,7 +93,7 @@ export default {
           rate.ratings.push({ id: h, rating: Number( refs[h][0].currentValue || 0 ) })
         }   
 
-        axios.post("http://rating-api-workshop.apps.317f7ab7a3b146648427.eastus.azmosa.io/api/rate", rate)
+        axios.post(process.env.API + "/api/rate", rate)
         .then(response => {
           router.push('leaderboard')
         })
