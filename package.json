@@ -5,8 +5,7 @@
   "author": "Joey Schluchter <jschluchter@gmail.com>",
   "scripts": {
     "build": "webpack -p",
-    "postinstall": "npm run build",
-    "start": "SITE_CODE='fruits' node app.js"
+    "start": "SITE_CODE='FR' node app.js"
   },
   "dependencies": {
     "at-ui": "^1.2.0-beta",
