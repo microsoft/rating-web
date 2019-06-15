@@ -46,7 +46,7 @@ export default {
     return {
       headerImage: "",
       subtitle:"",
-      itemes: [],
+      items: [],
       errors: []
     }
   },
