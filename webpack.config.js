@@ -82,5 +82,31 @@ module.exports = {
       'process.env.SITE_CODE': JSON.stringify(process.env.SITE_CODE),
       'process.env.API': JSON.stringify(process.env.API)
     })
-  ]
+  ],
+  devServer: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+    host: '0.0.0.0',
+    disableHostCheck: true,
+    port: 8080,
+    before(app) {
+      app.use((req, res, next) => {
+        console.log(`ENV API: `, process.env.API);
+        console.log(`Using middleware for ${req.url}`);
+        next();
+      });
+    },
+    noInfo: false,
+    historyApiFallback: {
+      index: '/dist/'
+    },
+    proxy: {
+      '/api': {
+        target: API
+      },
+      onError: onError,
+      logLevel: 'debug'
+    }
+  }
 };
