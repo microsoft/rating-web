@@ -3,7 +3,7 @@
 Container exposes port 8080.
 Required configuration via environment variables:
 
-- API:  `<set to rating-api endpoint>`. This has to be publicly addressable as requests happen via JavaScript over HTTP.
+- API:  `<set to rating-api endpoint>`. This *does not* have to be publicly accessible. The application proxies the API requests via the backend to the rating-api endpoint.
 
 # Contributing
 
