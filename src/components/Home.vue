@@ -44,7 +44,7 @@ export default {
     };
   },
   created() {
-    axios.get(process.env.API + "/api/sites/" + process.env.SITE_CODE)
+    axios.get("/api/sites/" + process.env.SITE_CODE)
       .then(response => {
         var page = response.data.payload.pages.Home
         document.title = page.title
