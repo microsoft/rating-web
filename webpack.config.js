@@ -80,7 +80,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
       'process.env.SITE_CODE': JSON.stringify(process.env.SITE_CODE),
-      'process.env.API': (process.env.API==undefined) ? JSON.stringify(process.env.API) : "http://rating-api:8080"
+      'process.env.API': JSON.stringify(process.env.API)
     })
   ],
   devServer: {
