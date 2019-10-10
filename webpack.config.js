@@ -80,7 +80,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
       'process.env.SITE_CODE': JSON.stringify(process.env.SITE_CODE),
-      'process.env.API': JSON.stringify(process.env.API)
+      'process.env.API': (process.env.API==undefined) ? JSON.stringify(process.env.API) : "http://rating-api:8080"
     })
   ],
   devServer: {
@@ -92,8 +92,6 @@ module.exports = {
     port: 8080,
     before(app) {
       app.use((req, res, next) => {
-        if(process.env.API == undefined)
-          process.env.API = "http://rating-api:8080";
         console.log(`ENV API: `, process.env.API);
         console.log(`Using middleware for ${req.url}`);
         next();
