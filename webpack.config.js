@@ -92,6 +92,8 @@ module.exports = {
     port: 8080,
     before(app) {
       app.use((req, res, next) => {
+        if(process.env.API == undefined)
+          process.env.API = "http://rating-api:8080";
         console.log(`ENV API: `, process.env.API);
         console.log(`Using middleware for ${req.url}`);
         next();
