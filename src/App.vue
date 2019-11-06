@@ -19,10 +19,8 @@ export default {
 
 // main css
 body {
-  background-color: #0071c5;
-  --azure-blue: #0071c5;
-  --msft-green: #4e7200;
-  --msft-orange: #c72b00;
+  background-color: #999;
+  //background-color: #0071c5;
   line-height: 1;
 }
 
