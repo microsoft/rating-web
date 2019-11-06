@@ -4,7 +4,7 @@
   "description": "Rating front-end",
   "author": "Joey Schluchter <jschluchter@gmail.com>",
   "scripts": {
-    "start": "SITE_CODE='FR' webpack-dev-server"
+    "start": "SITE_CODE='FR' API='http://rating-api:8080' webpack-dev-server"
   },
   "dependencies": {
     "at-ui": "^1.2.0-beta",
