@@ -1,11 +1,11 @@
-# rating-web
+# An Amazing Project for Rating Web
 
 Container exposes port 8080.
 Required configuration via environment variables:
 
 - API:  `<set to rating-api endpoint>`. This *does not* have to be publicly accessible. The application proxies the API requests via the backend to the rating-api endpoint.
 
-# Contributing
+# Contribution and Suggestions are always welcome & will be appreciated.
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
